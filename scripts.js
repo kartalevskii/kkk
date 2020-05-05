@@ -1,103 +1,126 @@
-//EX1
 
- /* for(let i = 1; i <= 50; i++){
-    console.log(i);
+//EX1
+function Creat() {
+    let a = prompt('Первое число EX1'),
+        b = prompt('Второе число EX1'),
+        c = prompt('Третье число EX1'),
+        d = (a - b) / c;
+    console.log(d);
 }
-for(let h = 35; h >= 8; h--){
-    console.log(h);
-} */
+Creat()
 
 //EX2
-
-    let i = 89;
-do {
-    document.write(i + '<br/>');
-    i--;
-} while (i >= 11);
+function math() {
+    let a = prompt('Введите число EX2');
+    let b = a * a;
+    let l = b * a;
+    console.log(b + ' и ' + l);
+}
+math()
 
 //EX3
-
-    let a = 100;
-    let sum = 0;
-
-for (let i = 0; i <= a; i++) {
-    sum += i;
-}
-
-console.log(sum);
-
-//EX4
-
-    let b = 5;
-    let summa = 0;
-
-for (let i = 1; i <= b; i++) {
-    summa = 0;
-    for (let j = 1; j <= i; j++) {
-        summa += j;
+function minmax() {
+    let a = prompt('Введите число EX3');
+    let b = prompt('Введите второе число EX3');
+    if (a < b) {
+        console.log(a + ' < ' + b);
+    } else {
+        console.log(a + ' > ' + b);
     }
-
-console.log('Сумма ' + i + ' = ' + summa);
 }
+minmax()
+
+ //EX4
+function diap() {
+    let a = prompt('Ведите числа в диапозоне от... EX4');
+    let b = prompt('  и до EX4');
+    let array = [];
+    for (a; a <= b; a++) {
+        array.push(+a)
+    }
+    console.log(array);
+}
+diap()
+     // В 4 задании вторая функция нужна для вывода полученного массива. К сожалению, я не понял, в чем её необходимость, если я и так могу его вывести.
 
 //EX5
-
-for (let i = 8; i <= 56; i++) {
-    if (i % 2 == 1) continue;
-
-console.log(i);
+function isEven() {
+    let a = 6;
+    if (a % 2 == 0) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
 }
+isEven();
 
 //EX6
-
-for (f = 1; f <= 10; f++) {
-for (s = 1; s <= 10; s++) {
-
-console.log(f + '*' + s + '=' + (f * s) ); }}
+function Arrayy() {
+    let array = [9, 46, 45, 13, 25, 87, 8, 100, 76, 1];
+    array2 = [];
+    for (i = 0; i <= array.length; i++) {
+        if ((array[i]) % 2 == 0) {
+            array2.push(array[i]);
+        }
+    }
+    console.log(array2);
+}
+Arrayy();
 
 //EX7
-
-    let n = 1000;
-    let num = 0;
-while (n >= 50)
-{
-n = n / 2;
-num++;
+function Egypt(NumberRows) {
+    let arr = new Array();
+    for (let i = 1; i <= NumberRows; i++) {
+        for (let j = 1; j <= i; j++) {
+            arr.push(j);
+            document.write(j);
+        }
+        document.write('<br\/>');
+    }
 }
-
-console.log (n + ' and ' + num);
+Egypt(20);
+    //немного не то
 
 //EX8
-
-    let numb = prompt('Введите числа');
-    let sun = 0;
-    let ov = 0;
-
-while(numb != 0 && numb != '') {
-    ov++;           
-    sun = sun + Number(numb); 
-    numb = prompt('Введите числа');
-        if(numb != 0) {
-    } else {numb = alert('Ошибка ввода')
-        break; }
+function fib(n) {
+    let a = 1;
+    let b = 1;
+    let arr = [];
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+        arr.push(b);
+        console.log(arr); //выглядит приятнее когда в консоле b
     }
-
-console.log(sun + ' and ' + sun/ov);
+}
+fib(16)
+    //все отробатывает хорошо, но не 1, а n-2 раз
 
 //EX9
+let num = prompt('Введите число для EX9');
 
-    let str = [4, 98, 4, 6, 1, 32, 4, 65, 4, 3, 5, 7, 89, 7, 10, 1, 36, 8, 57];
-    let min = str[0];
-    let max = min;
-       for (i = 0; i <= str.length; i++) {
-        if (str[i] > max) {max = str[i]; console.log(max)} 
-        if (str[i] < min) {min = str[i]; console.log(min)} 
-        }
+function Nine(a) {
+    let sum1 = 0;
+    for (let i = 0; i < a.length; i++) {
+        sum1 += +a[i];
+    }
+    if (sum1 > 9) {
+        Nine(sum1 + '');
+    } else {
+        console.log(sum1);
+    }
+}
+Nine(num);
 
+//EX10
+let arr = [1, 2, 3, 4, 5, 6];
+elem(arr);
 
+function elem(arr) {
+    console.log(arr.shift());
+    if (arr != 0) {
+        elem(arr);
+    }
+}
 
-
-    
-
-   
-   
